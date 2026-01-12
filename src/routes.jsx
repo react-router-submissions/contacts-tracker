@@ -5,7 +5,7 @@ import Root, {
 } from './components/Root';
 import ErrorPage from './components/ErrorPage';
 import Contact, { loader as contactLoader } from './components/Contact';
-import EditContact from './components/Edit';
+import EditContact, { action as editAction } from './components/Edit';
 
 const routes = createBrowserRouter([
   {
@@ -24,6 +24,7 @@ const routes = createBrowserRouter([
         path: 'contacts/:contactId/edit',
         element: <EditContact />,
         loader: contactLoader,
+        action: editAction,
       },
     ],
   },

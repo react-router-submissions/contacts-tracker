@@ -4,7 +4,10 @@ import Root, {
   action as rootAction,
 } from './components/Root';
 import ErrorPage from './components/ErrorPage';
-import Contact, { loader as contactLoader } from './components/Contact';
+import Contact, {
+  loader as contactLoader,
+  action as contactAction,
+} from './components/Contact';
 import EditContact, { action as editAction } from './components/Edit';
 import { action as destroyAction } from './components/Destroy';
 import Index from './components/Index';
@@ -25,6 +28,7 @@ const routes = createBrowserRouter([
         path: 'contacts/:contactId',
         element: <Contact />,
         loader: contactLoader,
+        action: contactAction,
       },
       {
         path: 'contacts/:contactId/edit',

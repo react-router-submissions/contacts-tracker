@@ -1,5 +1,8 @@
 import { createBrowserRouter } from 'react-router';
-import Root, { loader as rootLoader } from './components/Root';
+import Root, {
+  loader as rootLoader,
+  action as rootAction,
+} from './components/Root';
 import ErrorPage from './components/ErrorPage';
 import Contact from './components/Contact';
 
@@ -9,6 +12,7 @@ const routes = createBrowserRouter([
     element: <Root />,
     errorElement: <ErrorPage />,
     loader: rootLoader,
+    action: rootAction,
     children: [
       {
         path: 'contacts/:contactId',
